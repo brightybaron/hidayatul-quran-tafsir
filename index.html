@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          container: {
+            center: true,
+            padding: "1rem",
+          },
+        },
+      };
+    </script> -->
+    <title>Pengajian Tafsir Hidayatul Quran</title>
+  </head>
+  <body>
+    <section
+      class="sm:h-screen h-fit flex sm:flex-row flex-col sm:justify-start justify-center"
+    >
+      <img
+        src="./src/assets/cover.jpeg"
+        alt="hero-image"
+        class="w-auto sm:h-screen h-full object-contain"
+      />
+      <div class="w-full my-4">
+        <div class="flex flex-col gap-y-0.5 text-center">
+          <h1 class="text-lg sm:text-xl font-bold">
+            Pengajian Rutin Ahad Legi
+          </h1>
+          <h3 class="text-xl sm:text-2xl font-bold">Tafsir Hidayatul Quran</h3>
+          <h5 class="font-semibold underline">
+            oleh : Dr. KH. M. Afifudin Dimyathi, Lc. MA
+          </h5>
+        </div>
+        <div class="container w-full sm:w-3/4 mt-4 text-sm">
+          <p class="text-center font-semibold">Assalamualaikum Wr. Wb.</p>
+          <p class="mt-4 indent-8 text-justify">
+            Dalam rangka pelaksanaan Istighosah & Pengajian Rutin Ahad Legi
+            "Tafsir Hidayatul Qur'an" bulan Desember, kami mengundang kehadiran
+            Bapak/Ibu/Saudara/i pada:
+          </p>
+          <div class="mt-2 ml-2 flex flex-col gap-y-0.5">
+            <p><span class="font-bold">Hari :</span> Ahad</p>
+            <p><span class="font-bold">Tanggal :</span> 15 Desember 2024</p>
+            <p><span class="font-bold">Waktu :</span> 12.00 - 14.30 WIB</p>
+            <p>
+              <span class="font-bold">Lokasi :</span> Masjid Al-Ishlah, Graha
+              Bunder Asri, Gresik, Jawa Timur
+            </p>
+            <a
+              href="https://maps.app.goo.gl/7UFWGszvTN3gB4h68"
+              target="_blank"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit"
+              >Lihat lokasi</a
+            >
+          </div>
+          <p class="mt-2">
+            InsyaAllah acara ini akan dihadiri oleh
+            <span class="font-bold">Dr. KH. M. Afifudin Dimyathi, Lc. MA</span>.
+          </p>
+          <p class="mt-2 text-justify">
+            Kami mengajak Bapak/Ibu/Saudara/i untuk menghadiri dalam kegiatan
+            ini. Semoga mendatangakan keberkahan kepada kita semua. Terima kasih
+            atas perhatiannya.
+          </p>
+          <p class="mt-2">Hormat kami,</p>
+          <p>Panitia</p>
+        </div>
+        <div id="myAlert" class="mt-4"></div>
+        <form name="form-hadir" class="container mt-6 w-full sm:w-3/4 text-sm">
+          <h3 class="mb-1 font-semibold text-gray-900">
+            Mohon mengisi daftar kehadiran
+          </h3>
+          <div>
+            <!-- <label
+              for="name"
+              class="block mb-1 text-sm font-medium text-gray-900"
+            >
+              Nama
+            </label> -->
+            <input
+              type="text"
+              id="name"
+              name="nama"
+              required
+              placeholder="Masukkan nama Anda"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-gray-900"
+            />
+          </div>
+          <ul
+            class="mt-1 items-center w-full text-sm font-medium border rounded-lg flex bg-gray-700 border-gray-600 text-white"
+          >
+            <li
+              class="w-full border-b sm:border-b-0 sm:border-r border-gray-600"
+            >
+              <div class="flex items-center ps-3">
+                <input
+                  id="iya"
+                  type="radio"
+                  value="Ya"
+                  name="kehadiran"
+                  class="w-4 h-4 focus:ring-blue-600 ring-offset-gray-700 focus:ring-offset-gray-700 focus:ring-2 bg-gray-600 border-gray-500"
+                  required
+                />
+                <label
+                  for="iya"
+                  class="w-full py-3 ms-2 text-sm font-medium text-gray-300"
+                  >Ya</label
+                >
+              </div>
+            </li>
+            <li
+              class="w-full border-b sm:border-b-0 sm:border-r border-gray-600"
+            >
+              <div class="flex items-center ps-3">
+                <input
+                  id="tidak"
+                  type="radio"
+                  value="Tidak"
+                  name="kehadiran"
+                  class="w-4 h-4 focus:ring-blue-600 ring-offset-gray-700 focus:ring-offset-gray-700 focus:ring-2 bg-gray-600 border-gray-500"
+                />
+                <label
+                  for="tidak"
+                  class="w-full py-3 ms-2 text-sm font-medium text-gray-300"
+                  >Tidak</label
+                >
+              </div>
+            </li>
+          </ul>
+
+          <button
+            type="submit"
+            class="btn btn-submit w-fit mt-1 mb-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded button-kirim"
+          >
+            Kirim
+          </button>
+          <!-- Loading Button -->
+          <button
+            type="button"
+            disabled
+            class="flex items-center btn-submit w-fit mt-1 mb-4 bg-gray-600 text-gray-300 font-bold py-2 px-4 rounded button-loading hidden"
+          >
+            <span
+              class="spinner-border spinner-border-sm border-4 border-t-transparent rounded-full inline-block w-4 h-4 animate-spin"
+              role="status"
+              aria-hidden="true"
+            ></span>
+            Mengirim...
+          </button>
+        </form>
+
+        <div class="container w-full">
+          <p class="text-center text-2xl font-medium mb-4">Countdown</p>
+          <div class="flex justify-between text-center w-full">
+            <div class="rounded">
+              <h3 id="hari" class="font-semibold text-xl"></h3>
+              <p>Hari</p>
+            </div>
+            <div class="rounded">
+              <h3 id="jam" class="font-semibold text-xl"></h3>
+              <p>Jam</p>
+            </div>
+            <div class="rounded">
+              <h3 id="menit" class="font-semibold text-xl"></h3>
+              <p>Menit</p>
+            </div>
+            <div class="rounded">
+              <h3 id="detik" class="font-semibold text-xl"></h3>
+              <p>Detik</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwU0eowfXxJQV1IPQZj4LFrcjR999TNH87e9t8ZD0ruQjUB56Oo6m8riPetAFxMKxrc/exec";
+      const form = document.forms["form-hadir"];
+      const submitButton = document.querySelector(".button-kirim");
+      const loadingButton = document.querySelector(".button-loading");
+      const alertPlaceholder = document.getElementById("myAlert");
+      const typeColor = {
+        success: {
+          bg: "bg-green-100",
+          text: "text-green-800",
+          button: "text-green-500",
+          hoverButton: "hover:text-green-700",
+        },
+        error: {
+          bg: "bg-red-100",
+          text: "text-red-800",
+          button: "text-red-500",
+          hoverButton: "hover:text-red-700",
+        },
+      };
+
+      const appendAlert = (message, type) => {
+        const wrapper = document.createElement("div");
+        wrapper.className = `alert flex items-center justify-between p-4 mb-4 rounded-lg ${typeColor[type].bg} ${typeColor[type].text}`;
+        wrapper.innerHTML = `
+        <div>${message}</div>
+        <button type="button" class="btn-close ml-4 ${typeColor[type].button} ${typeColor[type].hoverButton}" aria-label="Close">×</button>
+      `;
+        wrapper.querySelector(".btn-close").addEventListener("click", () => {
+          wrapper.remove();
+        });
+        alertPlaceholder.appendChild(wrapper);
+      };
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        loadingButton.classList.remove("hidden");
+        submitButton.classList.add("hidden");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            loadingButton.classList.add("hidden");
+            submitButton.classList.remove("hidden");
+            // reset form
+            form.reset();
+            appendAlert("Data kehadiran Anda sudah terkirim.", "success");
+            console.log("Success!", response);
+          })
+          .catch((error) => {
+            loadingButton.classList.add("hidden");
+            submitButton.classList.remove("hidden");
+            console.error("Error!", error.message);
+            appendAlert("Registrasi gagal! Mohon coba lagi.", "error");
+          });
+      });
+
+      // Countdown
+      var countDown = new Date("June 14, 2025 08:00:00").getTime();
+
+      var x = setInterval(function () {
+        var now = new Date().getTime();
+        var interval = countDown - now;
+
+        var days = Math.floor(interval / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (interval % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((interval % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((interval % (1000 * 60)) / 1000);
+
+        document.getElementById("hari").innerHTML = days + "";
+        document.getElementById("jam").innerHTML = hours + "";
+        document.getElementById("menit").innerHTML = minutes + "";
+        document.getElementById("detik").innerHTML = seconds + "";
+
+        if (interval < 0) {
+          clearInterval(x);
+          document.getElementById("hari").innerHTML = "00";
+          document.getElementById("jam").innerHTML = "00";
+          document.getElementById("menit").innerHTML = "00";
+          document.getElementById("detik").innerHTML = "00";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
